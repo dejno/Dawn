@@ -72,7 +72,8 @@
     width: 16px;
     height: 16px;
     color: var(--orange-color);
-}
+    stroke: var(--dark-gray-color);
+  }
 
 .feed-visibility-public {
     display: none;

@@ -21,6 +21,10 @@
     color: var(--brand-color);
 }
 
+.single-no-access {
+  font-style: italic;
+}
+
 .single-title {
     margin-bottom: 0;
     font-size: 4rem;
