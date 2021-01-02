@@ -43,6 +43,13 @@
     text-transform: uppercase;
 }
 
+.feed-image {
+    display: flex;
+    margin-right: 1.5rem;
+    min-width: 45px;
+    white-space: nowrap;
+}
+
 .feed-title {
     flex-grow: 1;
     overflow: hidden;

@@ -7,6 +7,15 @@
             {{date published_at format="DD"}}
         </div>
     </div>
+    {{#if feature_image}}
+        <div class="feed-image u-placeholder horizontal">
+            <img class="lazyload u-object-fit"
+                data-srcset="{{> srcset}}" data-sizes="auto"
+                src="{{img_url feature_image size="m"}}"
+                srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                alt="{{title}}">
+        </div>
+    {{/if}}
     <h2 class="feed-title">{{title}}</h2>
     <div class="feed-right">
         {{#if @labs.members}}

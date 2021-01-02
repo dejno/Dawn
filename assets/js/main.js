@@ -172,6 +172,7 @@ function pagination() {
         items
     ) {
         $(items[0]).addClass('feed-paged');
+        console.log(items);
     });
 }
 

@@ -3,6 +3,9 @@
         {{#if @site.icon}}
             <div class="cover-icon">
                 <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                {{#if @site.title}}
+                    <h1 class="cover-name">{{@site.title}}</h1>
+                {{/if}}
             </div>
         {{/if}}
 
