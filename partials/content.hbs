@@ -56,15 +56,19 @@
                 <section class="single-cta">
                     {{#has visibility="paid"}}
                         <h2 class="single-cta-title">This post is for paying subscribers only</h2>
+                        <p class="single-no-access">
+                            This is a paid post. If you'd like to support my writing and see this post, you can subscribe to the monthly or annual plan.
+                            Subscribing will give you immediate access to all content on Techonomics!
+                        </p>
+                        <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
                     {{else}}
-                        <h2 class="single-cta-title">This post is for subscribers only</h2>
+                        <h2 class="single-cta-title">This free post is for email subscribers only</h2>
+                        <p class="single-no-access">
+                            You don't have access to this post at the moment,
+                            but if you subscribe with your email for free you'll be able to see this and all other free posts!
+                        </p>
+                        <button class="button single-cta-button" data-portal="signup">Sign up now</button>
                     {{/has}}
-                    <p class="single-no-access">
-                        You don't have access to this post at the moment,
-                        but if you upgrade your account you'll be able to see the whole thing,
-                        as well as all the other posts in the archive! Subscribing will give you immediate access.
-                    </p>
-                    <button class="button single-cta-button" data-portal="signup">Subscribe now</button>
                     <br>
                     <button class="button-text single-cta-footer" data-portal="signin">Already have an account? Sign in</button>
                 </section>
