@@ -38,3 +38,8 @@
 .share-link-twitter {
     background-color: var(--twitter-color);
 }
+
+.share-inline {
+    margin: 0 auto;
+    padding-top: 10px;
+}
