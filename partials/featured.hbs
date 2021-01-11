@@ -14,13 +14,17 @@
                                     alt="{{title}}">
                             </div>
                         {{/if}}
-                        <h3 class="post-title">{{title}}
-                          {{#has visibility="paid"}}
-                              <svg class="icon feed-visibility feed-visibility-{{visibility}}">
-                                  <use xlink:href="#lock"></use>
-                              </svg>
-                          {{/has}}
-                        </h3>
+                        {{#if @labs.members}}
+                          <h3 class="post-title">
+                            {{title}}
+                            {{#if access}}
+                            {{else}}
+                                <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+                                    <use xlink:href="#lock"></use>
+                                </svg>
+                            {{/if}}
+                          </h3>
+                        {{/if}}
                         <a class="u-permalink" href={{url}}
                             aria-label="{{title}}"></a>
                         <p>{{excerpt}}</p>

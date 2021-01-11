@@ -19,11 +19,12 @@
     <h2 class="feed-title">{{title}}</h2>
     <div class="feed-right">
         {{#if @labs.members}}
-            {{#has visibility="paid"}}
+            {{#if access}}
+            {{else}}
                 <svg class="icon feed-visibility feed-visibility-{{visibility}}">
                     <use xlink:href="#lock"></use>
                 </svg>
-            {{/has}}
+            {{/if}}
         {{/if}}
         <div class="feed-length">
             {{reading_time}}
