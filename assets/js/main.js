@@ -22,6 +22,7 @@ $(function () {
     search();
     burger();
     theme();
+    takeover();
 });
 
 $(window).on('scroll', function () {
@@ -36,6 +37,7 @@ $(window).on('scroll', function () {
 
 $(window).on('load', function () {
     'use strict';
+
     if (body.hasClass('post-template')) {
         titleOffset = $('.single-title').offset().top;
 
@@ -43,6 +45,10 @@ $(window).on('load', function () {
         var contentHeight = content.height();
         contentOffset =
             content.offset().top + contentHeight - $(window).height() / 2;
+    }
+
+    if(!!Cookies.get('takeover') === true) {
+        $('.takeover').hide();
     }
 });
 
@@ -65,8 +71,8 @@ function sticky() {
     progress.css(
         'transform',
         'translate3d(' +
-            (-100 + Math.min((st * 100) / contentOffset, 100)) +
-            '%,0,0)'
+        (-100 + Math.min((st * 100) / contentOffset, 100)) +
+        '%,0,0)'
     );
 
     lastSt = st;
@@ -381,12 +387,12 @@ function search() {
 
         $.get(
             url +
-                "&filter=updated_at:>'" +
-                localStorage
-                    .getItem('dawn_search_last')
-                    .replace(/\..*/, '')
-                    .replace(/T/, ' ') +
-                "'",
+            "&filter=updated_at:>'" +
+            localStorage
+                .getItem('dawn_search_last')
+                .replace(/\..*/, '')
+                .replace(/T/, ' ') +
+            "'",
             function (data) {
                 if (data.posts.length > 0) {
                     update(data);
@@ -396,7 +402,7 @@ function search() {
     }
 
     searchInput.on('keyup', function (e) {
-        var result = index.search(e.target.value, { expand: true });
+        var result = index.search(e.target.value, {expand: true});
         var output = '';
 
         result.forEach(function (post) {
@@ -579,3 +585,15 @@ function pswp(container, element, trigger, caption, isGallery) {
         onThumbnailsClick(e);
     });
 }
+
+function takeover() {
+    var takeover = $('.takeover');
+    var takeoverClose = $('.takeover .close-button');
+
+    takeoverClose.on('click', function () {
+        takeover.hide();
+        Cookies.set('takeover', true, { expires: 0.5 });
+    });
+
+}
+

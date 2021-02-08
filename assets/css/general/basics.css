@@ -93,7 +93,6 @@ blockquote {
     font-weight: 700;
     font-style: italic;
     letter-spacing: -0.03rem;
-    text-align: center;
     background-color: var(--lighter-gray-color);
 }
 

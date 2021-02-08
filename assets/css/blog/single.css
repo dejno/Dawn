@@ -84,6 +84,7 @@
 .single-footer-middle {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .single-footer-top {

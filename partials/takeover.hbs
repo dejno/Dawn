@@ -1,0 +1,26 @@
+<div class="takeover">
+    <div class="takeover-content">
+        <div class="cover-content">
+            {{#if @site.icon}}
+                <div class="cover-icon">
+                    <img class="cover-icon-image" src="{{@site.icon}}" alt="{{@site.title}}">
+                    {{#if @site.title}}
+                        <h1 class="cover-name">{{@site.title}}</h1>
+                    {{/if}}
+                </div>
+            {{/if}}
+
+            {{#if @site.description}}
+                <div class="cover-description">{{@site.description}}</div>
+            {{/if}}
+        </div>
+        <form data-members-form class="form-wrapper">
+          <input data-members-email class="modal-input" type="email" required="true" placeholder="Type your email..."/>
+          <button class="form-button subscribe-button" type="submit" aria-label="Subscribe">Subscribe</button>
+          <p data-members-error><!-- error message will appear here --></p>
+        </form>
+        <button class="button close-button" aria-label="Close">
+            Let me read it first
+        </button>
+    </div>
+</div>
