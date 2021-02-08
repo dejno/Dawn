@@ -21,3 +21,9 @@
     letter-spacing: 0.05rem;
     text-transform: uppercase;
 }
+
+.featured-placeholder {
+    background: url(../images/welcome-to-ghost.png) 0 0 no-repeat;
+    background-size: cover;
+    background-position: center;
+}
