@@ -12,14 +12,26 @@
         {{#if @site.description}}
             <div class="cover-description">{{@site.description}}</div>
         {{/if}}
-
         {{#if @labs.members}}
-            {{#unless @member}}
+            {{#if @member}}
+            {{else}}
                 <div class="cover-cta">
-                    <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
-                    <button class="button button-secondary members-login" data-portal="signin">Login</button>
+                    <form data-members-form>
+                      <input data-members-label type="hidden" value="Free"/>
+                      <input data-members-email type="email" required="true" class="input" placeholder="your@email.com"/>
+                      <button class="button members-subscribe" type="submit">Subscribe</button>
+                      <p class="loading">Talking to the internet...</p>
+                      <p class="success">&#x2705 Success! Please check your email to sign in.</p>
+                      <p data-members-error class="error"><!-- error message will appear here --></p>
+                      {{#is "home"}}
+                        <p class="signin"><a href="#/portal/signin">Sign in</a></p>
+                        {{else}}
+                        <p>Already subscribed? <a href="#/portal/signin">Sign in.</a></p>
+                      {{/is}}
+                      {{#is "home"}}<p>{{> button-archive}}</p>{{/is}}
+                    </form>
                 </div>
-            {{/unless}}
+            {{/if}}
         {{/if}}
     </div>
 </div>

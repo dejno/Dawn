@@ -18,6 +18,11 @@
         "ghost-theme"
     ],
     "config": {
+        "podcast_urls": {
+            "spotify": "https://open.spotify.com/show/67rkv6xTvGK4stalZ8KuBm?si=n7pozITzT5q3_BS2w4ixFw&nd=1",
+            "apple": "https://podcasts.apple.com/us/podcast/techonomics/id1550047652",
+            "google": "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3RlY2hvbm9taWNzbmV3cy9mZWVkLnhtbA"
+        },
         "posts_per_page": 5,
         "image_sizes": {
             "xs": {

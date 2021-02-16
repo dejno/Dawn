@@ -39,4 +39,33 @@
 
 .cover-cta .button {
     margin: 0 0.5rem;
+    background-color: var(--brand-color);
+    color: var(--white-color);
+}
+
+.cover .input {
+    width: auto;
+}
+
+form[data-members-form] p {
+    padding: 1em;
+}
+
+form[data-members-form] .loading,
+form[data-members-form] .success,
+form[data-members-form] .error {
+    display: none;
+}
+
+form[data-members-form].loading .loading,
+form[data-members-form].success .success,
+form[data-members-form].error .error {
+    display: block;
+}
+
+form[data-members-form] .signin {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2em 3em;
 }

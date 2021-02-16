@@ -23,14 +23,8 @@
     border-top: 1px solid var(--light-gray-color);
 }
 
-.feed + .feed.feed-paged {
-    margin-top: 3rem;
-    border-top: 0;
-}
-
 .feed-calendar {
     display: flex;
-    margin-right: 1.5rem;
     min-width: 45px;
     color: var(--brand-color);
     font-size: 1.1rem;
@@ -46,29 +40,28 @@
 .feed-image {
     display: flex;
     margin-right: 1.5rem;
-    min-width: 45px;
+    min-width: 16rem;
     white-space: nowrap;
 }
 
 .feed-title {
     flex-grow: 1;
     overflow: hidden;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     padding-right: 1rem;
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 600;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .feed-right {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     transition: margin 0.2s var(--animation-base);
 }
 
 .feed-visibility {
-    margin-right: 1rem;
     width: 16px;
     height: 16px;
     color: var(--orange-color);
@@ -83,6 +76,7 @@
     color: var(--secondary-text-color);
     font-size: 1.4rem;
     white-space: nowrap;
+    margin-right: 0.5rem;
 }
 
 .feed-icon {
@@ -93,4 +87,14 @@
     color: var(--secondary-text-color);
     transition: transform 0.2s var(--animation-base);
     transform: translateX(2rem);
+}
+
+.feed-post-content {
+    margin: 1rem 3rem 1rem 0;
+}
+
+@media (max-width: 767px) {
+    .feed-image {
+        display: none;
+    }
 }

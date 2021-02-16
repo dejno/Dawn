@@ -1,4 +1,19 @@
 routes:
+  /:
+    controller: channel
+    template: home
+  /newsletters/:
+    controller: channel
+    filter: primary_tag:newsletter
+    data:
+      page: page.newsletters
+    template: page-newsletters
+  /podcasts/:
+    controller: channel
+    filter: primary_tag:podcast
+    data:
+      page: page.podcasts
+    template: page-podcasts
   /subscribe/: members/subscribe
   /signup/: members/signup
   /signin/: members/signin
@@ -6,7 +21,7 @@ routes:
   /upgrade/: members/upgrade
 
 collections:
-  /:
+  /archive/:
     permalink: /{slug}/
     template: index
 

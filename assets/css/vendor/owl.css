@@ -85,6 +85,11 @@
   width: 18px;
 }
 
+.owl .owl-prev,
+.owl .owl-next {
+    top: -60px;
+}
+
 .owl .owl-prev {
   right: 34px;
 }

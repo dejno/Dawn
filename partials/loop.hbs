@@ -1,35 +1,38 @@
 <article class="feed {{post_class}}">
-    <div class="feed-calendar">
-        <div class="feed-calendar-month">
-            {{date published_at format="MMM"}}
-        </div>
-        <div class="feed-calendar-day">
-            {{date published_at format="DD"}}
+    <div class="feed-post-content">
+        <h2 class="feed-title">{{title}}</h2>
+        <p>{{excerpt}}</p>
+        <div class="feed-right">
+            <div class="feed-calendar">
+                <div class="feed-calendar-month">
+                    {{date published_at format="MMM"}}
+                </div>
+                <div class="feed-calendar-day">
+                    {{date published_at format="DD"}}
+                </div>
+            </div>
+            <div class="feed-length">
+                {{reading_time}}
+            </div>
+            {{#if @labs.members}}
+                {{#if access}}
+                {{else}}
+                    <svg class="icon feed-visibility feed-visibility-{{visibility}}">
+                        <use xlink:href="#lock"></use>
+                    </svg>
+                {{/if}}
+            {{/if}}
         </div>
     </div>
     {{#if feature_image}}
         <div class="feed-image u-placeholder horizontal">
             <img class="lazyload u-object-fit"
                 data-srcset="{{> srcset}}" data-sizes="auto"
-                src="{{img_url feature_image size="m"}}"
+                src="{{img_url feature_image size="s"}}"
                 srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="{{title}}">
         </div>
     {{/if}}
-    <h2 class="feed-title">{{title}}</h2>
-    <div class="feed-right">
-        {{#if @labs.members}}
-            {{#if access}}
-            {{else}}
-                <svg class="icon feed-visibility feed-visibility-{{visibility}}">
-                    <use xlink:href="#lock"></use>
-                </svg>
-            {{/if}}
-        {{/if}}
-        <div class="feed-length">
-            {{reading_time}}
-        </div>
-    </div>
     <svg class="icon feed-icon">
         <use xlink:href="#chevron-right"></use>
     </svg>

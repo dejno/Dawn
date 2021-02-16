@@ -33,8 +33,22 @@
     {{> icons}}
 
     <div class="site">
-        {{> header}}
         {{#is "home"}}
+            {{#if @labs.members}}
+                {{#if @member}}
+                    {{> header}}
+                {{/if}}
+            {{/if}}
+            {{> cover}}
+            {{#if @labs.members}}
+                {{#if @member}}
+                    {{> featured}}
+                {{/if}}
+            {{/if}}
+        {{else}}
+            {{> header}}
+        {{/is}}
+        {{#is "archive"}}
             {{> cover}}
             {{> featured}}
         {{/is}}
